@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+T=$(dirname $0)
+if [ ${T:0:1} != "/" ]; then 
+   T=$PWD/$T
+fi
+export LD_LIBRARY_PATH=$T/viewer/bin
+export VIMAGE=eog
+export VEDITOR=gedit
+export VMODELS=/assig/grau-g/models
+export VTEXTURES=/assig/grau-g/Textures
+export VTESTS=/assig/grau-g/tests
+export LC_NUMERIC="C"
+$T/viewer/bin/viewerd $@
+
+
+
