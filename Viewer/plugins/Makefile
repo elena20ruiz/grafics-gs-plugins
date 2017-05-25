@@ -37,7 +37,11 @@ SUBTARGETS    =  \
 		sub-alphablending \
 		sub-animate-vertices \
 		sub-draw-box \
-		sub-draw-smooth
+		sub-draw-smooth \
+		sub-draw-bounding-box \
+		sub-selection-key \
+		sub-selection-mouse \
+		sub-mouse-selection
 
 
 sub-draw-vbo-ext-qmake_all:  FORCE
@@ -290,6 +294,106 @@ sub-draw-smooth-install_subtargets: FORCE
 sub-draw-smooth-uninstall_subtargets: FORCE
 	@test -d draw-smooth/ || mkdir -p draw-smooth/
 	cd draw-smooth/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-smooth/draw-smooth.pro -o Makefile ) && $(MAKE) -f Makefile uninstall
+sub-draw-bounding-box-qmake_all:  FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile
+	cd draw-bounding-box/ && $(MAKE) -f Makefile qmake_all
+sub-draw-bounding-box: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile
+sub-draw-bounding-box-make_first: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile 
+sub-draw-bounding-box-all: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile all
+sub-draw-bounding-box-clean: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile clean
+sub-draw-bounding-box-distclean: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile distclean
+sub-draw-bounding-box-install_subtargets: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile install
+sub-draw-bounding-box-uninstall_subtargets: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile uninstall
+sub-selection-key-qmake_all:  FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile
+	cd selection-key/ && $(MAKE) -f Makefile qmake_all
+sub-selection-key: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile
+sub-selection-key-make_first: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile 
+sub-selection-key-all: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile all
+sub-selection-key-clean: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile clean
+sub-selection-key-distclean: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile distclean
+sub-selection-key-install_subtargets: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile install
+sub-selection-key-uninstall_subtargets: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile uninstall
+sub-selection-mouse-qmake_all:  FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile
+	cd selection-mouse/ && $(MAKE) -f Makefile qmake_all
+sub-selection-mouse: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile
+sub-selection-mouse-make_first: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile 
+sub-selection-mouse-all: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile all
+sub-selection-mouse-clean: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile clean
+sub-selection-mouse-distclean: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile distclean
+sub-selection-mouse-install_subtargets: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile install
+sub-selection-mouse-uninstall_subtargets: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile uninstall
+sub-mouse-selection-qmake_all:  FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile
+	cd mouse-selection/ && $(MAKE) -f Makefile qmake_all
+sub-mouse-selection: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile
+sub-mouse-selection-make_first: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile 
+sub-mouse-selection-all: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile all
+sub-mouse-selection-clean: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile clean
+sub-mouse-selection-distclean: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile distclean
+sub-mouse-selection-install_subtargets: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile install
+sub-mouse-selection-uninstall_subtargets: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile uninstall
 
 Makefile: plugins.pro /usr/lib64/qt5/mkspecs/linux-g++/qmake.conf /usr/lib64/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib64/qt5/mkspecs/common/unix.conf \
@@ -497,15 +601,15 @@ plugins.pro:
 qmake: FORCE
 	@$(QMAKE) -o Makefile plugins.pro
 
-qmake_all: sub-draw-vbo-ext-qmake_all sub-navigate-default-qmake_all sub-render-default-qmake_all sub-effect-crt-qmake_all sub-shaderLoader-qmake_all sub-show-help-qmake_all sub-alphablending-qmake_all sub-animate-vertices-qmake_all sub-draw-box-qmake_all sub-draw-smooth-qmake_all FORCE
+qmake_all: sub-draw-vbo-ext-qmake_all sub-navigate-default-qmake_all sub-render-default-qmake_all sub-effect-crt-qmake_all sub-shaderLoader-qmake_all sub-show-help-qmake_all sub-alphablending-qmake_all sub-animate-vertices-qmake_all sub-draw-box-qmake_all sub-draw-smooth-qmake_all sub-draw-bounding-box-qmake_all sub-selection-key-qmake_all sub-selection-mouse-qmake_all sub-mouse-selection-qmake_all FORCE
 
-make_first: sub-draw-vbo-ext-make_first sub-navigate-default-make_first sub-render-default-make_first sub-effect-crt-make_first sub-shaderLoader-make_first sub-show-help-make_first sub-alphablending-make_first sub-animate-vertices-make_first sub-draw-box-make_first sub-draw-smooth-make_first  FORCE
-all: sub-draw-vbo-ext-all sub-navigate-default-all sub-render-default-all sub-effect-crt-all sub-shaderLoader-all sub-show-help-all sub-alphablending-all sub-animate-vertices-all sub-draw-box-all sub-draw-smooth-all  FORCE
-clean: sub-draw-vbo-ext-clean sub-navigate-default-clean sub-render-default-clean sub-effect-crt-clean sub-shaderLoader-clean sub-show-help-clean sub-alphablending-clean sub-animate-vertices-clean sub-draw-box-clean sub-draw-smooth-clean  FORCE
-distclean: sub-draw-vbo-ext-distclean sub-navigate-default-distclean sub-render-default-distclean sub-effect-crt-distclean sub-shaderLoader-distclean sub-show-help-distclean sub-alphablending-distclean sub-animate-vertices-distclean sub-draw-box-distclean sub-draw-smooth-distclean  FORCE
+make_first: sub-draw-vbo-ext-make_first sub-navigate-default-make_first sub-render-default-make_first sub-effect-crt-make_first sub-shaderLoader-make_first sub-show-help-make_first sub-alphablending-make_first sub-animate-vertices-make_first sub-draw-box-make_first sub-draw-smooth-make_first sub-draw-bounding-box-make_first sub-selection-key-make_first sub-selection-mouse-make_first sub-mouse-selection-make_first  FORCE
+all: sub-draw-vbo-ext-all sub-navigate-default-all sub-render-default-all sub-effect-crt-all sub-shaderLoader-all sub-show-help-all sub-alphablending-all sub-animate-vertices-all sub-draw-box-all sub-draw-smooth-all sub-draw-bounding-box-all sub-selection-key-all sub-selection-mouse-all sub-mouse-selection-all  FORCE
+clean: sub-draw-vbo-ext-clean sub-navigate-default-clean sub-render-default-clean sub-effect-crt-clean sub-shaderLoader-clean sub-show-help-clean sub-alphablending-clean sub-animate-vertices-clean sub-draw-box-clean sub-draw-smooth-clean sub-draw-bounding-box-clean sub-selection-key-clean sub-selection-mouse-clean sub-mouse-selection-clean  FORCE
+distclean: sub-draw-vbo-ext-distclean sub-navigate-default-distclean sub-render-default-distclean sub-effect-crt-distclean sub-shaderLoader-distclean sub-show-help-distclean sub-alphablending-distclean sub-animate-vertices-distclean sub-draw-box-distclean sub-draw-smooth-distclean sub-draw-bounding-box-distclean sub-selection-key-distclean sub-selection-mouse-distclean sub-mouse-selection-distclean  FORCE
 	-$(DEL_FILE) Makefile
-install_subtargets: sub-draw-vbo-ext-install_subtargets sub-navigate-default-install_subtargets sub-render-default-install_subtargets sub-effect-crt-install_subtargets sub-shaderLoader-install_subtargets sub-show-help-install_subtargets sub-alphablending-install_subtargets sub-animate-vertices-install_subtargets sub-draw-box-install_subtargets sub-draw-smooth-install_subtargets FORCE
-uninstall_subtargets: sub-draw-vbo-ext-uninstall_subtargets sub-navigate-default-uninstall_subtargets sub-render-default-uninstall_subtargets sub-effect-crt-uninstall_subtargets sub-shaderLoader-uninstall_subtargets sub-show-help-uninstall_subtargets sub-alphablending-uninstall_subtargets sub-animate-vertices-uninstall_subtargets sub-draw-box-uninstall_subtargets sub-draw-smooth-uninstall_subtargets FORCE
+install_subtargets: sub-draw-vbo-ext-install_subtargets sub-navigate-default-install_subtargets sub-render-default-install_subtargets sub-effect-crt-install_subtargets sub-shaderLoader-install_subtargets sub-show-help-install_subtargets sub-alphablending-install_subtargets sub-animate-vertices-install_subtargets sub-draw-box-install_subtargets sub-draw-smooth-install_subtargets sub-draw-bounding-box-install_subtargets sub-selection-key-install_subtargets sub-selection-mouse-install_subtargets sub-mouse-selection-install_subtargets FORCE
+uninstall_subtargets: sub-draw-vbo-ext-uninstall_subtargets sub-navigate-default-uninstall_subtargets sub-render-default-uninstall_subtargets sub-effect-crt-uninstall_subtargets sub-shaderLoader-uninstall_subtargets sub-show-help-uninstall_subtargets sub-alphablending-uninstall_subtargets sub-animate-vertices-uninstall_subtargets sub-draw-box-uninstall_subtargets sub-draw-smooth-uninstall_subtargets sub-draw-bounding-box-uninstall_subtargets sub-selection-key-uninstall_subtargets sub-selection-mouse-uninstall_subtargets sub-mouse-selection-uninstall_subtargets FORCE
 
 sub-draw-vbo-ext-check:
 	@test -d draw-vbo-ext/ || mkdir -p draw-vbo-ext/
@@ -537,7 +641,19 @@ sub-draw-box-check:
 sub-draw-smooth-check:
 	@test -d draw-smooth/ || mkdir -p draw-smooth/
 	cd draw-smooth/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-smooth/draw-smooth.pro -o Makefile ) && $(MAKE) -f Makefile check
-check: sub-draw-vbo-ext-check sub-navigate-default-check sub-render-default-check sub-effect-crt-check sub-shaderLoader-check sub-show-help-check sub-alphablending-check sub-animate-vertices-check sub-draw-box-check sub-draw-smooth-check
+sub-draw-bounding-box-check:
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile check
+sub-selection-key-check:
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile check
+sub-selection-mouse-check:
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile check
+sub-mouse-selection-check:
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile check
+check: sub-draw-vbo-ext-check sub-navigate-default-check sub-render-default-check sub-effect-crt-check sub-shaderLoader-check sub-show-help-check sub-alphablending-check sub-animate-vertices-check sub-draw-box-check sub-draw-smooth-check sub-draw-bounding-box-check sub-selection-key-check sub-selection-mouse-check sub-mouse-selection-check
 
 sub-draw-vbo-ext-benchmark:
 	@test -d draw-vbo-ext/ || mkdir -p draw-vbo-ext/
@@ -569,7 +685,19 @@ sub-draw-box-benchmark:
 sub-draw-smooth-benchmark:
 	@test -d draw-smooth/ || mkdir -p draw-smooth/
 	cd draw-smooth/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-smooth/draw-smooth.pro -o Makefile ) && $(MAKE) -f Makefile benchmark
-benchmark: sub-draw-vbo-ext-benchmark sub-navigate-default-benchmark sub-render-default-benchmark sub-effect-crt-benchmark sub-shaderLoader-benchmark sub-show-help-benchmark sub-alphablending-benchmark sub-animate-vertices-benchmark sub-draw-box-benchmark sub-draw-smooth-benchmark
+sub-draw-bounding-box-benchmark:
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -f Makefile benchmark
+sub-selection-key-benchmark:
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -f Makefile benchmark
+sub-selection-mouse-benchmark:
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -f Makefile benchmark
+sub-mouse-selection-benchmark:
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -f Makefile benchmark
+benchmark: sub-draw-vbo-ext-benchmark sub-navigate-default-benchmark sub-render-default-benchmark sub-effect-crt-benchmark sub-shaderLoader-benchmark sub-show-help-benchmark sub-alphablending-benchmark sub-animate-vertices-benchmark sub-draw-box-benchmark sub-draw-smooth-benchmark sub-draw-bounding-box-benchmark sub-selection-key-benchmark sub-selection-mouse-benchmark sub-mouse-selection-benchmark
 install:install_subtargets  FORCE
 
 uninstall: uninstall_subtargets FORCE
@@ -579,7 +707,7 @@ FORCE:
 dist: distdir FORCE
 	(cd `dirname $(DISTDIR)` && $(TAR) $(DISTNAME).tar $(DISTNAME) && $(COMPRESS) $(DISTNAME).tar) && $(MOVE) `dirname $(DISTDIR)`/$(DISTNAME).tar.gz . && $(DEL_FILE) -r $(DISTDIR)
 
-distdir: sub-draw-vbo-ext-distdir sub-navigate-default-distdir sub-render-default-distdir sub-effect-crt-distdir sub-shaderLoader-distdir sub-show-help-distdir sub-alphablending-distdir sub-animate-vertices-distdir sub-draw-box-distdir sub-draw-smooth-distdir FORCE
+distdir: sub-draw-vbo-ext-distdir sub-navigate-default-distdir sub-render-default-distdir sub-effect-crt-distdir sub-shaderLoader-distdir sub-show-help-distdir sub-alphablending-distdir sub-animate-vertices-distdir sub-draw-box-distdir sub-draw-smooth-distdir sub-draw-bounding-box-distdir sub-selection-key-distdir sub-selection-mouse-distdir sub-mouse-selection-distdir FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents /usr/lib64/qt5/mkspecs/features/spec_pre.prf /usr/lib64/qt5/mkspecs/common/unix.conf /usr/lib64/qt5/mkspecs/common/linux.conf /usr/lib64/qt5/mkspecs/common/sanitize.conf /usr/lib64/qt5/mkspecs/common/gcc-base.conf /usr/lib64/qt5/mkspecs/common/gcc-base-unix.conf /usr/lib64/qt5/mkspecs/common/g++-base.conf /usr/lib64/qt5/mkspecs/common/g++-unix.conf /usr/lib64/qt5/mkspecs/qconfig.pri /usr/lib64/qt5/mkspecs/modules/qt_AkonadiMime.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_clucene_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_concurrent.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_concurrent_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_core.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_core_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_dbus.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_dbus_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_designer.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_designer_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_designercomponents_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_gui.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_gui_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_help.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_help_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_location.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_location_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_multimedia.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_multimedia_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_multimediawidgets.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_multimediawidgets_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_network.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_network_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_opengl.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_opengl_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_openglextensions.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_platformsupport_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_positioning.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_positioning_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_printsupport.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_printsupport_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_qml.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_qml_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_qmldevtools_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_qmltest.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_qmltest_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_quick.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_quick_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_quickparticles_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_quickwidgets.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_quickwidgets_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_script.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_script_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_scripttools.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_scripttools_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_sensors.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_sensors_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_serialport.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_serialport_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_sql.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_sql_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_svg.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_svg_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_testlib.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_testlib_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_uiplugin.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_uitools.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_uitools_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_webkit.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_webkit_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_webkitwidgets.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_webkitwidgets_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_websockets.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_websockets_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_widgets.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_widgets_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_x11extras.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_x11extras_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_xml.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_xml_private.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_xmlpatterns.pri /usr/lib64/qt5/mkspecs/modules/qt_lib_xmlpatterns_private.pri /usr/lib64/qt5/mkspecs/features/qt_functions.prf /usr/lib64/qt5/mkspecs/features/qt_config.prf /usr/lib64/qt5/mkspecs/linux-g++/qmake.conf /usr/lib64/qt5/mkspecs/features/spec_post.prf /usr/lib64/qt5/mkspecs/features/exclusive_builds.prf /usr/lib64/qt5/mkspecs/features/default_pre.prf /usr/lib64/qt5/mkspecs/features/resolve_config.prf /usr/lib64/qt5/mkspecs/features/default_post.prf /usr/lib64/qt5/mkspecs/features/warn_on.prf /usr/lib64/qt5/mkspecs/features/file_copies.prf /usr/lib64/qt5/mkspecs/features/testcase_targets.prf /usr/lib64/qt5/mkspecs/features/exceptions.prf /usr/lib64/qt5/mkspecs/features/yacc.prf /usr/lib64/qt5/mkspecs/features/lex.prf plugins.pro $(DISTDIR)/
 
@@ -622,4 +750,20 @@ sub-draw-box-distdir: FORCE
 sub-draw-smooth-distdir: FORCE
 	@test -d draw-smooth/ || mkdir -p draw-smooth/
 	cd draw-smooth/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-smooth/draw-smooth.pro -o Makefile ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/draw-smooth
+
+sub-draw-bounding-box-distdir: FORCE
+	@test -d draw-bounding-box/ || mkdir -p draw-bounding-box/
+	cd draw-bounding-box/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/draw-bounding-box/draw-bounding-box.pro -o Makefile ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/draw-bounding-box
+
+sub-selection-key-distdir: FORCE
+	@test -d selection-key/ || mkdir -p selection-key/
+	cd selection-key/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-key/selection-key.pro -o Makefile ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/selection-key
+
+sub-selection-mouse-distdir: FORCE
+	@test -d selection-mouse/ || mkdir -p selection-mouse/
+	cd selection-mouse/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/selection-mouse/selection-mouse.pro -o Makefile ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/selection-mouse
+
+sub-mouse-selection-distdir: FORCE
+	@test -d mouse-selection/ || mkdir -p mouse-selection/
+	cd mouse-selection/ && ( test -e Makefile || $(QMAKE) /dades/elena.ruiz/linux/grafics-gs-plugins/Viewer/plugins/mouse-selection/mouse-selection.pro -o Makefile ) && $(MAKE) -e -f Makefile distdir DISTDIR=$(DISTDIR)/mouse-selection
 

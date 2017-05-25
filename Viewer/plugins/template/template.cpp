@@ -5,16 +5,6 @@
 
 void Template::onPluginLoad()
 {
-    // Load & compile VS 
-    vs = new QOpenGLShader(QOpenGLShader::Vertex, this);
-    vs->compileSourceFile(QString(getenv ("VIEWER"))+"/plugins/template/template.vert");
-    qDebug() << vs->log() << endl;
-
-    // Load & compile FS 
-    fs = new QOpenGLShader(QOpenGLShader::Fragment, this);
-    fs->compileSourceFile(QString(getenv ("VIEWER"))+"/plugins/template/template.frag");
-    qDebug() << fs->log() << endl;
-
     // Link program
     program = new QOpenGLShaderProgram(this);
     program->addShader(vs);
@@ -31,12 +21,7 @@ void Template::onPluginLoad()
 
 void Template::onObjectAdd()
 {
-    unsigned int numObjects = scene()->objects().size();
-    qDebug() << "Added new object " << endl;
-    qDebug() << " Current scene has " << numObjects << " objects" << endl;
-    unsigned int numFaces = scene()->objects()[numObjects-1].faces().size();
-    unsigned int numVertices = scene()->objects()[numObjects-1].vertices().size();
-    qDebug() << " Last object has " << numFaces << " faces and " << numVertices << " vertices" << endl;
+
 }
 
 void Template::preFrame()
@@ -45,10 +30,6 @@ void Template::preFrame()
 
 void Template::postFrame()
 {
-    glColor3f(0.0, 0.0, 0.0);
-	int x = 5;
-	int y = 15;
-	glwidget()->renderText(x,y, QString("[Template plugin] "));
     
 }
 
@@ -101,6 +82,4 @@ bool Template::paintGL()
 
     return true;
 }
-
-Q_EXPORT_PLUGIN2(templatep, Template)   // plugin name, plugin class
 

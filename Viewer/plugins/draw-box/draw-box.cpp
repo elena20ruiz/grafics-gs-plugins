@@ -47,18 +47,20 @@ bool DrawBox::drawScene()
 void DrawBox::drawBoxes(){
     GLWidget &g = *glwidget();
     g.makeCurrent();
-    //static int counter = 0;
-    cout << "drawScene " << scene()->objects().size() << endl;
-    //glEnable(GL_CULL_FACE);
-    //glEnable(GL_DEPTH_TEST);
-    QMatrix4x4 MVP = camera()->projectionMatrix()*camera()->viewMatrix();
-    program->setUniformValue("modelViewProjectionMatrix", MVP);
+    program->bind();
+    program->setUniformValue("normalMatrix", camera()->viewMatrix().normalMatrix());
+    program->setUniformValue("modelViewProjectionMatrix", camera()->projectionMatrix() * camera()->viewMatrix());
 
-    for (int i = 0; i < scene()->objects().size(); ++i) {
-      g.glBindVertexArray(VAOs[i]);
+    for (Object& object : scene()->objects()) {
+      program->setUniformValue("boundingBoxMax", object.boundingBox().max());
+      program->setUniformValue("boundingBoxMin", object.boundingBox().min());
+      g.glBindVertexArray(VAOs[0]);
       g.glDrawArrays(GL_TRIANGLE_STRIP, 0, 18);
       g.glBindVertexArray(0);
     }
+
+    program->release();
+    g.glBindVertexArray(0);
 }
 
 void DrawBox::generarEscena(){

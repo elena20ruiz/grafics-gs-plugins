@@ -10,6 +10,10 @@ SUBDIRS += alphablending
 SUBDIRS += animate-vertices
 SUBDIRS += draw-box
 SUBDIRS += draw-smooth
-
+SUBDIRS += draw-bounding-box
+SUBDIRS += selection-key
+SUBDIRS += selection-mouse
+SUBDIRS += mouse-selection
+#SUBDIRS += template
 
 

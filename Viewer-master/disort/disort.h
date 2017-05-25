@@ -1,0 +1,29 @@
+#ifndef _GLOWING_H
+#define _GLOWING_H
+
+#include "basicplugin.h"
+#include <QOpenGLShader>
+#include <QOpenGLShaderProgram>
+#include <QElapsedTimer>
+
+class Disort : public QObject, public BasicPlugin
+{
+     Q_OBJECT
+     Q_PLUGIN_METADATA(IID "BasicPlugin")   
+     Q_INTERFACES(BasicPlugin)
+
+ public:
+    void onPluginLoad();
+    bool paintGL();
+ 
+ private:
+    QOpenGLShaderProgram* program;
+    QOpenGLShader* vs;
+    QOpenGLShader* fs;  
+    GLuint textureId;
+
+    QTimer timer;
+    QElapsedTimer elapsedTimer;
+ };
+ 
+ #endif
