@@ -16,4 +16,6 @@ SUBDIRS += selection-mouse
 SUBDIRS += mouse-selection
 #SUBDIRS += template
 
+SUBDIRS += ghostlight
+
 
